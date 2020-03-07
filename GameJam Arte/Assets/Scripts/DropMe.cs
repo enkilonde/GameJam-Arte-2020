@@ -9,6 +9,8 @@ public class DropMe : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 	public Image receivingImage;
 	private Color normalColor;
 	public Color highlightColor = Color.yellow;
+
+    public MemoryBarManager memoryBarManager;
 	
 	public void OnEnable ()
 	{
@@ -26,6 +28,7 @@ public class DropMe : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 		Sprite dropSprite = GetDropSprite (data);
 		if (dropSprite != null)
         {
+            //memoryBarManager.OnDropSprite(this, dropSprite);
             receivingImage.overrideSprite = dropSprite;
             receivingImage.color = Color.white; // To reset the alpha
         }

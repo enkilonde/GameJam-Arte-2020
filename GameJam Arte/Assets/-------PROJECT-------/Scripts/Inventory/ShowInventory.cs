@@ -2,23 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MemoryBarManager : MonoBehaviour
+public class ShowInventory : MonoBehaviour
 {
-    
-    public List<DropMe> dropZones = new List<DropMe>();
 
+    private Canvas canvas;
     // Start is called before the first frame update
     void Start()
     {
-        
+        canvas = GetComponent<Canvas>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyUp(KeyCode.I))
+            canvas.enabled = !canvas.enabled;
     }
-
-    
-
 }

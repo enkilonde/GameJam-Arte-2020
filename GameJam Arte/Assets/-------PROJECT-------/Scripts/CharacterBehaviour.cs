@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class CharacterBehaviour : MonoBehaviour
+public class CharacterBehaviour : MonoBehaviour
 {
-
-    public abstract void CustomUpdate();
+    public Actions action;
+    public virtual void CustomUpdate() { }
     public virtual void CustomFixedUpdate() { }
 
     public virtual void OnAdd() { }

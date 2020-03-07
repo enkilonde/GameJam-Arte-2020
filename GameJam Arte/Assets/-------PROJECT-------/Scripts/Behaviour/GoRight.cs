@@ -10,9 +10,7 @@ public class GoRight : CharacterBehaviour
     {
         if (Input.GetAxis("Horizontal") > 0)
         {
-            //CharacterBehaviourManager.instance.transform.position += Vector3.right * Time.deltaTime * speed;
-            //CharacterBehaviourManager.instance.rigidbody2D.AddForce(Vector3.right * Time.deltaTime * speed);
-            CharacterBehaviourManager.instance.rigidbody2D.velocity += Vector2.right * Input.GetAxis("Horizontal") * speed * Time.deltaTime;
+            CharacterBehaviourManager.instance.rigidbody2D.velocity += Vector2.right * Input.GetAxis("Horizontal") * speed;
 
         }
     }

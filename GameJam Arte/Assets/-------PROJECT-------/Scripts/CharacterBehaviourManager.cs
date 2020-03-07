@@ -15,6 +15,7 @@ public class CharacterBehaviourManager : MonoBehaviour
     }
 
     public Rigidbody2D rigidbody2D;
+    public FootCollider footCollider;
 
     public List<CharacterBehaviour> allCharaBehaviour = new List<CharacterBehaviour>();
     public List<CharacterBehaviour> enabledCharaBehaviour = new List<CharacterBehaviour>();

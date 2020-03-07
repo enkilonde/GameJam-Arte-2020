@@ -433,7 +433,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 4a70cc575cd3b20408d7600b235b8bda, type: 3}
-  m_Color: {r: 0.2924528, g: 0.2924528, b: 0.2924528, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -642,6 +642,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3964aa5d015899f48b2e0ddc7dd965e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jumpForce: 10
+  jumpForceDecrease: 5
 --- !u!1 &1249556206
 GameObject:
   m_ObjectHideFlags: 0
@@ -653,7 +655,7 @@ GameObject:
   - component: {fileID: 1249556208}
   - component: {fileID: 1249556207}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Gravity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -671,7 +673,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 062572d06aeace842b5cb844402fdfd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: {x: 0, y: -10, z: 0}
+  direction: {x: 0, y: -10}
 --- !u!4 &1249556208
 Transform:
   m_ObjectHideFlags: 0
@@ -889,7 +891,7 @@ Rigidbody2D:
   m_Mass: 80
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 6200000, guid: bdd0d202abc024149ada5be5d3edc72b, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -925,10 +927,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbody2D: {fileID: 1472416309}
+  footCollider: {fileID: 2112618281}
   allCharaBehaviour: []
   enabledCharaBehaviour:
   - {fileID: 1924442333}
   - {fileID: 1944289879}
+  - {fileID: 1249556207}
+  - {fileID: 1023759884}
 --- !u!1 &1740306742
 GameObject:
   m_ObjectHideFlags: 0

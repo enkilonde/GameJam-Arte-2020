@@ -4,11 +4,18 @@ using UnityEngine;
 
 public class Gravity : CharacterBehaviour
 {
-    public Vector3 direction;
+    public Vector2 direction;
+
+    public override void CustomFixedUpdate()
+    {
+        base.CustomFixedUpdate();
+
+        CharacterBehaviourManager.instance.rigidbody2D.velocity += direction;
+
+    }
 
     public override void CustomUpdate()
     {
-        CharacterBehaviourManager.instance.transform.position += direction * Time.deltaTime;
     }
 
 }

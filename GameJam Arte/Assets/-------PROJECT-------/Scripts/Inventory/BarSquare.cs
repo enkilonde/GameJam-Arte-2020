@@ -11,9 +11,11 @@ public class BarSquare : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
 
     public DragableObject contained = null;
     public bool locked = false;
+    public bool erased = false;
     public bool hovered = false;
 
     public Image hoverIndicator;
+    public Image erasedImage;
 
 
 
@@ -44,13 +46,16 @@ public class BarSquare : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     {
         hovered = false;
 
-
+        if (locked)
+            return;
 
         hoverIndicator.enabled = false;
         if (MemoryBarManager.instance.dragedObject == null)
             return;
         for (int i = 0; i < Mathf.Min(followingSquares.Count, MemoryBarManager.instance.dragedObject.size - 1); i++)
         {
+            if (followingSquares[i].locked)
+                continue;   
             followingSquares[i].hoverIndicator.enabled = false;
         }
     }
@@ -155,19 +160,26 @@ public class BarSquare : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
 
         OnPointerExit(null);
 
-        CharacterBehaviourManager.instance.enabledCharaBehaviour.Add(contained.characterBehaviour);
-        contained.characterBehaviour.OnAdd();
+        CharacterBehaviourManager.instance.AddBehaviour(contained.action);
     }
 
-    void OnRemove()
+    public void OnRemove()
     {
         if (contained != null)
         {
-            contained.characterBehaviour.OnRemove();
+
+            CharacterBehaviourManager.instance.RemoveBehaviour(contained.action);
             Destroy(contained.gameObject);
-            CharacterBehaviourManager.instance.enabledCharaBehaviour.Remove(contained.characterBehaviour);
 
         }
+    }
+
+
+    public void Erase()
+    {
+        erased = true;
+        erasedImage.enabled = true;
+        OnRemove();
     }
 
 }

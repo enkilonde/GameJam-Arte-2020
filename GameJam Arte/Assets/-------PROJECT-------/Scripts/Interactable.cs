@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Interactable : MonoBehaviour
+public class Interactable : MonoBehaviour
 {
     public float radius = 2;
     public Actions neededBehaviour;
@@ -16,12 +16,15 @@ public abstract class Interactable : MonoBehaviour
         {
             Interact();
         }
+        CustomUpdate();
     }
 
-    public abstract void Interact();
+    protected virtual void CustomUpdate() { }
 
-    public void OnDrawGizmosSelected()
+    public virtual void Interact() { }
+
+    public virtual void OnDrawGizmosSelected()
     {
-        Gizmos.DrawSphere(transform.position, radius);
+        Gizmos.DrawWireSphere(transform.position, radius);
     }
 }

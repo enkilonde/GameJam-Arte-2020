@@ -38,11 +38,15 @@ public class CharacterBehaviourManager : MonoBehaviour
     public Rigidbody2D rigidbody2D;
     public FootCollider footCollider;
 
-    public List<CharacterBehaviour> allCharaBehaviour = new List<CharacterBehaviour>();
+    public CharacterBehaviour[] allCharaBehaviour;
     public List<CharacterBehaviour> enabledCharaBehaviour = new List<CharacterBehaviour>();
 
-    
+    public Animator animator;
 
+    private void Awake()
+    {
+        allCharaBehaviour = GetComponentsInChildren<CharacterBehaviour>();
+    }
 
     void Update()
     {
@@ -69,6 +73,32 @@ public class CharacterBehaviourManager : MonoBehaviour
                 return true;
         }
         return false;
+    }
+
+    public void AddBehaviour(Actions action)
+    {
+        for (int i = 0; i < allCharaBehaviour.Length; i++)
+        {
+            if(allCharaBehaviour[i].action == action)
+            {
+                enabledCharaBehaviour.Add(allCharaBehaviour[i]);
+                allCharaBehaviour[i].OnAdd();
+                return;
+            }
+        }
+    }
+
+    public void RemoveBehaviour(Actions action)
+    {
+        for (int i = 0; i < allCharaBehaviour.Length; i++)
+        {
+            if (allCharaBehaviour[i].action == action)
+            {
+                enabledCharaBehaviour.Remove(allCharaBehaviour[i]);
+                allCharaBehaviour[i].OnRemove();
+                return;
+            }
+        }
     }
 
 }

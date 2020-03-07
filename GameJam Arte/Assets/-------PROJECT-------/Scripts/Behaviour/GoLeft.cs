@@ -9,10 +9,11 @@ public class GoLeft : CharacterBehaviour
 
     public override void CustomFixedUpdate()
     {
+        CharacterBehaviourManager.instance.animator.SetFloat("speed", Mathf.Abs(Input.GetAxis("Horizontal")));
         if (Input.GetAxis("Horizontal") < 0)
         {
             CharacterBehaviourManager.instance.rigidbody2D.velocity += Vector2.right * Input.GetAxis("Horizontal") * speed;
-
+            CharacterBehaviourManager.instance.transform.localScale = new Vector3(-1, 1, 0);
         }
     }
 

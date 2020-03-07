@@ -10,7 +10,8 @@ public class DragableObject : MonoBehaviour, IBeginDragHandler
     RectTransform rectTransform;
 
     public float size = 1;
-    public CharacterBehaviour characterBehaviour;
+    public Actions action;
+    //public CharacterBehaviour characterBehaviour;
 
     public void OnBeginDrag(PointerEventData eventData)
     {
@@ -55,5 +56,12 @@ public class DragableObject : MonoBehaviour, IBeginDragHandler
                 Destroy(gameObject);
             }
         }
+
+        //Cheat code to add all
+        if(Input.GetKeyUp(KeyCode.C))
+        {
+            MemoryBarManager.instance.AddBehaviour(this);
+        }
+
     }
 }

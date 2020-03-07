@@ -15,26 +15,20 @@ public class Jump : CharacterBehaviour
     {
         base.CustomFixedUpdate();
 
-        if(Input.GetButtonDown("Jump") && CharacterBehaviourManager.instance.footCollider.onGround)
-        {
-            StartJump();
-        }
 
         if (jumForceDecreasing > 0)
         {
             Jumping();
         }
 
-        if (jumping && Input.GetButtonUp("Jump"))
-        {
-            OnEndJump();
-        }
+
 
     }
 
     private void StartJump()
     {
-        Debug.Log("Jump!!!");
+        Debug.Log("Jump");
+        CharacterBehaviourManager.instance.animator.SetTrigger("jump");
         jumForceDecreasing = jumpForce;
         jumping = true;
     }
@@ -60,5 +54,15 @@ public class Jump : CharacterBehaviour
 
     public override void CustomUpdate()
     {
+        if (Input.GetButtonDown("Jump") && CharacterBehaviourManager.instance.footCollider.onGround)
+        {
+            StartJump();
+        }
+
+        if (jumping && Input.GetButtonUp("Jump"))
+        {
+            OnEndJump();
+        }
+
     }
 }

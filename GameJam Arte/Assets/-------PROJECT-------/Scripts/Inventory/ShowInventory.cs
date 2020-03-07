@@ -6,6 +6,7 @@ public class ShowInventory : MonoBehaviour
 {
 
     private Canvas canvas;
+    public CanvasGroup canvasGroup;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +17,10 @@ public class ShowInventory : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyUp(KeyCode.I))
-            canvas.enabled = !canvas.enabled;
+        {
+            canvasGroup.alpha = 1 - canvasGroup.alpha;
+            canvasGroup.blocksRaycasts = !canvasGroup.blocksRaycasts;
+            canvasGroup.interactable = !canvasGroup.interactable;
+        }
     }
 }

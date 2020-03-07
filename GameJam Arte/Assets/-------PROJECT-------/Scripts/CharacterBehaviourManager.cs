@@ -2,6 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum Actions
+{
+    GoLeft,
+    GoRight,
+    Jump,
+    Crouch,
+    LookAround,
+    Push,
+    Pull,
+    Talk,
+    Hack,
+    Hit,
+    Gravity,
+    Throw,
+    ClimbUp,
+    ClimbDown,
+    OpenDoor,
+    PushButton
+
+}
+
 public class CharacterBehaviourManager : MonoBehaviour
 {
     private static CharacterBehaviourManager _instance;
@@ -20,13 +41,9 @@ public class CharacterBehaviourManager : MonoBehaviour
     public List<CharacterBehaviour> allCharaBehaviour = new List<CharacterBehaviour>();
     public List<CharacterBehaviour> enabledCharaBehaviour = new List<CharacterBehaviour>();
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    
 
-    // Update is called once per frame
+
     void Update()
     {
         for (int i = 0; i < enabledCharaBehaviour.Count; i++)
@@ -43,4 +60,15 @@ public class CharacterBehaviourManager : MonoBehaviour
             enabledCharaBehaviour[i].CustomFixedUpdate();
         }
     }
+
+    public bool HasAction(Actions action)
+    {
+        for (int i = 0; i < enabledCharaBehaviour.Count; i++)
+        {
+            if (enabledCharaBehaviour[i].action == action)
+                return true;
+        }
+        return false;
+    }
+
 }

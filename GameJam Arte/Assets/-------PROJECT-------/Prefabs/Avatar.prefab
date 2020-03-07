@@ -150,6 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 062572d06aeace842b5cb844402fdfd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  action: 10
   direction: {x: 0, y: -20}
 --- !u!1 &295144449391247696
 GameObject:
@@ -194,6 +195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65eefad0c86127b4b8c82c4fee4cc8be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  action: 4
   volume: {fileID: 0}
   value: 1
 --- !u!1 &295144449440074283
@@ -239,6 +241,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d77088ca7ae0d041989798bc9431a2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  action: 0
   speed: 10
 --- !u!1 &295144449453514917
 GameObject:
@@ -283,6 +286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cb49e18ab73efb4fbacf306dfdb9729, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  action: 1
   speed: 10
 --- !u!1 &295144449570978014
 GameObject:
@@ -896,6 +900,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3964aa5d015899f48b2e0ddc7dd965e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  action: 2
   jumping: 0
   jumpForce: 25
   jumpForceDecrease: 10

@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class Jump : CharacterBehaviour
 {
-    private bool jumping = false;
+    public bool jumping = false;
     public float jumpForce = 10;
     public float jumpForceDecrease = 5;
 
-    private float jumForceDecreasing;
+    public float jumForceDecreasing;
 
     public override void CustomFixedUpdate()
     {
@@ -20,27 +20,42 @@ public class Jump : CharacterBehaviour
             StartJump();
         }
 
-        if (jumping && Input.GetButton("Jump"))
+        if (jumForceDecreasing > 0)
         {
             Jumping();
         }
 
         if (jumping && Input.GetButtonUp("Jump"))
         {
-            jumpForceDecrease = 0;
+            OnEndJump();
         }
 
     }
 
     private void StartJump()
     {
+        Debug.Log("Jump!!!");
         jumForceDecreasing = jumpForce;
+        jumping = true;
     }
 
     private void Jumping()
     {
         CharacterBehaviourManager.instance.rigidbody2D.velocity += Vector2.up * jumForceDecreasing;
         jumForceDecreasing -= jumpForceDecrease * Time.fixedDeltaTime;
+
+        if(!Input.GetButton("Jump"))
+        {
+            jumForceDecreasing -= jumpForceDecrease * Time.fixedDeltaTime;
+        }
+
+        //if (CharacterBehaviourManager.instance.footCollider.onGround)
+        //    OnEndJump();
+    }
+
+    private void OnEndJump()
+    {
+        //jumping = false;
     }
 
     public override void CustomUpdate()

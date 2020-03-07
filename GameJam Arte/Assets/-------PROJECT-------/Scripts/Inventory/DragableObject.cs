@@ -4,17 +4,18 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class DragableObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
+public class DragableObject : MonoBehaviour, IBeginDragHandler
 {
     public bool dragged = false;
     RectTransform rectTransform;
 
-    public float lenght = 1;
+    public float size = 1;
     public CharacterBehaviour characterBehaviour;
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        Debug.Log("Begin Drag");
+        if (Input.GetMouseButton(2))
+            return;
         GameObject draggedObj = Instantiate(gameObject, transform.position, transform.rotation, transform.parent);
         DragableObject dra = draggedObj.GetComponent<DragableObject>();
         dra.dragged = true;
@@ -28,16 +29,11 @@ public class DragableObject : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
         MemoryBarManager.instance.dragedObject = dra;
     }
 
-    public void OnDrag(PointerEventData eventData)
+    public void OnClick(BaseEventData eventData)
     {
-        Debug.Log("Drag");
-
-    }
-
-    public void OnEndDrag(PointerEventData eventData)
-    {
-        Debug.Log("End Drag");
-
+        PointerEventData pointerEventData = (PointerEventData)eventData;
+        if (pointerEventData.button == PointerEventData.InputButton.Middle)
+            MemoryBarManager.instance.AddBehaviour(this);
     }
 
     // Start is called before the first frame update

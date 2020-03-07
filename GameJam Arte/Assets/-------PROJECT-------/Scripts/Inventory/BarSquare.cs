@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class BarSquare : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
 
-    private List<BarSquare> followingSquares = new List<BarSquare>();
+    [HideInInspector] public List<BarSquare> followingSquares = new List<BarSquare>();
 
     public DragableObject contained = null;
     public bool locked = false;
@@ -22,7 +22,7 @@ public class BarSquare : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         if (MemoryBarManager.instance.dragedObject == null)
             return;
 
-        if (followingSquares.Count < MemoryBarManager.instance.dragedObject.lenght-1)
+        if (followingSquares.Count < MemoryBarManager.instance.dragedObject.size-1)
             return;
 
         
@@ -33,7 +33,7 @@ public class BarSquare : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         {
             hoverIndicator.enabled = true;
 
-            for (int i = 0; i < Mathf.Min(followingSquares.Count, MemoryBarManager.instance.dragedObject.lenght - 1); i++)
+            for (int i = 0; i < Mathf.Min(followingSquares.Count, MemoryBarManager.instance.dragedObject.size - 1); i++)
             {
                 followingSquares[i].hoverIndicator.enabled = true;
             }
@@ -49,7 +49,7 @@ public class BarSquare : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         hoverIndicator.enabled = false;
         if (MemoryBarManager.instance.dragedObject == null)
             return;
-        for (int i = 0; i < Mathf.Min(followingSquares.Count, MemoryBarManager.instance.dragedObject.lenght - 1); i++)
+        for (int i = 0; i < Mathf.Min(followingSquares.Count, MemoryBarManager.instance.dragedObject.size - 1); i++)
         {
             followingSquares[i].hoverIndicator.enabled = false;
         }
@@ -90,43 +90,7 @@ public class BarSquare : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         if (locked || !hovered)
             return;
 
-        OnRemove();
-
-        GameObject draggedObj = Instantiate(MemoryBarManager.instance.dragedObject.gameObject, transform.position, transform.rotation, transform.parent);
-        contained = draggedObj.GetComponent<DragableObject>();
-        contained.dragged = false;
-
-        contained.transform.SetSiblingIndex(0);
-
-        //Unlock
-        for (int i = 0; i < followingSquares.Count; i++)
-        {
-            if (followingSquares[i].locked)
-                followingSquares[i].Unlock();
-            else
-                break;
-        }
-
-
-        //Lock
-        for (int i = 0; i < Mathf.Min(followingSquares.Count, contained.lenght-1); i++)
-        {
-            followingSquares[i].Lock();
-            if(followingSquares[i].contained != null)
-            {
-                Destroy(followingSquares[i].contained.gameObject);
-            }
-        }
-
-        Image[] imagesDragged = contained.GetComponentsInChildren<Image>();
-        for (int i = 0; i < imagesDragged.Length; i++)
-        {
-            imagesDragged[i].raycastTarget = false;
-        }
-
-        OnPointerExit(null);
-
-        CharacterBehaviourManager.instance.enabledCharaBehaviour.Add(contained.characterBehaviour);
+        OnAdd(MemoryBarManager.instance.dragedObject);
 
     }
 
@@ -153,10 +117,53 @@ public class BarSquare : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
             OnRemove();
     }
 
+    public void OnAdd(DragableObject objectToAdd)
+    {
+        OnRemove();
+
+        GameObject draggedObj = Instantiate(objectToAdd.gameObject, transform.position, transform.rotation, transform.parent);
+        contained = draggedObj.GetComponent<DragableObject>();
+        contained.dragged = false;
+
+        contained.transform.SetSiblingIndex(0);
+
+        //Unlock
+        for (int i = 0; i < followingSquares.Count; i++)
+        {
+            if (followingSquares[i].locked)
+                followingSquares[i].Unlock();
+            else
+                break;
+        }
+
+
+        //Lock
+        for (int i = 0; i < Mathf.Min(followingSquares.Count, contained.size - 1); i++)
+        {
+            followingSquares[i].Lock();
+            if (followingSquares[i].contained != null)
+            {
+                Destroy(followingSquares[i].contained.gameObject);
+            }
+        }
+
+        Image[] imagesDragged = contained.GetComponentsInChildren<Image>();
+        for (int i = 0; i < imagesDragged.Length; i++)
+        {
+            imagesDragged[i].raycastTarget = false;
+        }
+
+        OnPointerExit(null);
+
+        CharacterBehaviourManager.instance.enabledCharaBehaviour.Add(contained.characterBehaviour);
+        contained.characterBehaviour.OnAdd();
+    }
+
     void OnRemove()
     {
         if (contained != null)
         {
+            contained.characterBehaviour.OnRemove();
             Destroy(contained.gameObject);
             CharacterBehaviourManager.instance.enabledCharaBehaviour.Remove(contained.characterBehaviour);
 

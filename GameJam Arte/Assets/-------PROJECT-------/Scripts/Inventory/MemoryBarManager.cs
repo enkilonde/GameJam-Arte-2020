@@ -24,24 +24,45 @@ public class MemoryBarManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-    }
 
-    
-
-    void OnUpdateList()
-    {
-        
     }
 
     public void OnDropObject()
     {
-        OnDrop?.Invoke();        
+        OnDrop?.Invoke();
     }
+
+    public void AddBehaviour(DragableObject dragableObject)
+    {
+        for (int i = 0; i < barSquares.Count - dragableObject.size + 1; i++)
+        {
+            if (barSquares[i].contained != null)
+                continue;
+            if(dragableObject.size == 1)
+            {
+                barSquares[i].OnAdd(dragableObject);
+                return;
+            }
+
+
+            for (int j = 0; j < dragableObject.size - 1; j++)
+            {
+                if (barSquares[i].followingSquares[j].locked)
+                    break;
+                if(j == dragableObject.size - 2)
+                {
+                    barSquares[i].OnAdd(dragableObject);
+                    return;
+                }              
+            }
+        }
+    }
+
+
 }

@@ -28,6 +28,9 @@ public class Pull : Interactable
             transform.position -= (Vector3)playerDir;
 
         previousPlayerPos = CharacterBehaviourManager.instance.transform.position;
+
+        if (wantedDir.magnitude > radius)
+            activated = false;
     }
 
     public override void OnDrawGizmosSelected()

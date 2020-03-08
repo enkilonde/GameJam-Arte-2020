@@ -17,8 +17,6 @@ public class Trigger2D : BaseTrigger
     {
         Collider2D collider = GetComponent<Collider2D>();
         collider.isTrigger = true;
-
-        collideTags = new string[1] { "GameController" };
     }
 
 

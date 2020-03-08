@@ -57,6 +57,7 @@ GameObject:
   - component: {fileID: 295144448985802949}
   - component: {fileID: 295144448985802951}
   - component: {fileID: 1547440342613114062}
+  - component: {fileID: 4563051240774114267}
   m_Layer: 0
   m_Name: Avatar
   m_TagString: Player
@@ -131,7 +132,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: caab64d6eed7d5242aa31e6eb10c2d3a, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 193c95e58c1838045a1923123ade86d8, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -217,6 +218,14 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!81 &4563051240774114267
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 295144448985802948}
+  m_Enabled: 1
 --- !u!1 &295144448998726866
 GameObject:
   m_ObjectHideFlags: 0

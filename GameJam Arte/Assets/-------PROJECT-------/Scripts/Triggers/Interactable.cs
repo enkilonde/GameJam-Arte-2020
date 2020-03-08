@@ -23,7 +23,7 @@ public class Interactable : MonoBehaviour
 
     protected virtual void CustomUpdate() { }
 
-    public virtual void Interact() { }
+    public virtual void Interact() { OnInteract?.Invoke(); }
 
     public virtual void OnDrawGizmosSelected()
     {

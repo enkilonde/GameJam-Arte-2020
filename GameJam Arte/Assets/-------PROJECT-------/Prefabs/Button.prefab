@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2649190970588284709}
   - component: {fileID: 2649190970588284708}
+  - component: {fileID: 6931981552204765168}
   m_Layer: 0
   m_Name: Button
   m_TagString: Untagged
@@ -82,3 +83,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6931981552204765168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2649190970588284707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cbbecaf687a1294ead29ac2f2d859b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 1
+  neededBehaviour: 15
+  OnInteract:
+    m_PersistentCalls:
+      m_Calls: []

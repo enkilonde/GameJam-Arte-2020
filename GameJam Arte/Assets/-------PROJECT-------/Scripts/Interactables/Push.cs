@@ -10,6 +10,7 @@ public class Push : Interactable
 
     public override void Interact()
     {
+        base.Interact();
         activated = !activated;
         previousPlayerPos = CharacterBehaviourManager.instance.transform.position;
     }

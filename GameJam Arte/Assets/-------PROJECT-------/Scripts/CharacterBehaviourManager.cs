@@ -43,9 +43,22 @@ public class CharacterBehaviourManager : MonoBehaviour
 
     public Animator animator;
 
+    public AudioSource walkAudio;
+
+    [Range(0, 7)]
+    public int slotsAtStart = 7;
+
     private void Awake()
     {
         allCharaBehaviour = GetComponentsInChildren<CharacterBehaviour>();
+    }
+
+    private void Start()
+    {
+        for (int i = slotsAtStart; i < 7; i++)
+        {
+            MemoryBarManager.instance.EraseRight();
+        }
     }
 
     void Update()
@@ -58,6 +71,11 @@ public class CharacterBehaviourManager : MonoBehaviour
         {
             allCharaBehaviour[i].DisabledUpdate();
         }
+
+        if (HasAction(Actions.GoLeft) || HasAction(Actions.GoRight))
+            walkAudio.volume = Mathf.Abs(Input.GetAxis("Horizontal"));
+        else
+            walkAudio.volume = 0;
     }
 
     private void FixedUpdate()

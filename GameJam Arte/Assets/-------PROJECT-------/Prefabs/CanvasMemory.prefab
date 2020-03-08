@@ -121,7 +121,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 322690971281860364}
   m_Enabled: 1
-  m_Alpha: 0
+  m_Alpha: 1
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
@@ -1164,7 +1164,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -229256013063241344, guid: b4c5eba786806404db170f542c1e3725,
+      objectReference: {fileID: 6934086728263231946, guid: b4c5eba786806404db170f542c1e3725,
         type: 3}
     - target: {fileID: 8370265112371955261, guid: 88a3137f31bead2459dcd3d4770ff04d,
         type: 3}
@@ -1340,7 +1340,7 @@ PrefabInstance:
     - target: {fileID: 2136073344517420455, guid: 2960fa428c8f4dc408a3ad13fc47bab1,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 6772578514634530848, guid: 2960fa428c8f4dc408a3ad13fc47bab1,
         type: 3}
@@ -1487,7 +1487,7 @@ PrefabInstance:
     - target: {fileID: 2136073344517420455, guid: 2960fa428c8f4dc408a3ad13fc47bab1,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 6772578514634530848, guid: 2960fa428c8f4dc408a3ad13fc47bab1,
         type: 3}
@@ -1765,7 +1765,7 @@ PrefabInstance:
     - target: {fileID: 2136073344517420455, guid: 2960fa428c8f4dc408a3ad13fc47bab1,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 2136073344517420455, guid: 2960fa428c8f4dc408a3ad13fc47bab1,
         type: 3}
@@ -1912,12 +1912,12 @@ PrefabInstance:
     - target: {fileID: 2136073344517420455, guid: 2960fa428c8f4dc408a3ad13fc47bab1,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 2136073344517420455, guid: 2960fa428c8f4dc408a3ad13fc47bab1,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 6772578514634530848, guid: 2960fa428c8f4dc408a3ad13fc47bab1,
         type: 3}
@@ -2059,7 +2059,7 @@ PrefabInstance:
     - target: {fileID: 2136073344517420455, guid: 2960fa428c8f4dc408a3ad13fc47bab1,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: -1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2136073344517420455, guid: 2960fa428c8f4dc408a3ad13fc47bab1,
         type: 3}
@@ -2448,7 +2448,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 6934086728263231946, guid: b4c5eba786806404db170f542c1e3725,
+      objectReference: {fileID: -229256013063241344, guid: b4c5eba786806404db170f542c1e3725,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88a3137f31bead2459dcd3d4770ff04d, type: 3}
@@ -2478,7 +2478,7 @@ PrefabInstance:
     - target: {fileID: 2136073344517420455, guid: 2960fa428c8f4dc408a3ad13fc47bab1,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 6772578514634530848, guid: 2960fa428c8f4dc408a3ad13fc47bab1,
         type: 3}
@@ -2756,7 +2756,7 @@ PrefabInstance:
     - target: {fileID: 2136073344517420455, guid: 2960fa428c8f4dc408a3ad13fc47bab1,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: -1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2136073344517420455, guid: 2960fa428c8f4dc408a3ad13fc47bab1,
         type: 3}

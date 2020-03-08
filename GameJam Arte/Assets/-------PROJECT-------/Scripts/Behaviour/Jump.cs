@@ -9,7 +9,7 @@ public class Jump : CharacterBehaviour
     public float jumpForce = 10;
     public float jumpForceDecrease = 5;
 
-    public float jumForceDecreasing;
+    private float jumForceDecreasing;
 
     public override void CustomFixedUpdate()
     {

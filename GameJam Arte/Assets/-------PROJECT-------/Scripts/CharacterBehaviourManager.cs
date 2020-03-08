@@ -54,6 +54,10 @@ public class CharacterBehaviourManager : MonoBehaviour
         {
             enabledCharaBehaviour[i].CustomUpdate();
         }
+        for (int i = 0; i < allCharaBehaviour.Length; i++)
+        {
+            allCharaBehaviour[i].DisabledUpdate();
+        }
     }
 
     private void FixedUpdate()
@@ -62,6 +66,10 @@ public class CharacterBehaviourManager : MonoBehaviour
         for (int i = 0; i < enabledCharaBehaviour.Count; i++)
         {
             enabledCharaBehaviour[i].CustomFixedUpdate();
+        }
+        for (int i = 0; i < allCharaBehaviour.Length; i++)
+        {
+            allCharaBehaviour[i].DisabledFixedUpdate();
         }
     }
 

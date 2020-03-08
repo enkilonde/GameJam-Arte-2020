@@ -6,16 +6,23 @@ public class Gravity : CharacterBehaviour
 {
     public Vector2 direction;
 
+    public bool activated = false;
+
     public override void CustomFixedUpdate()
     {
         base.CustomFixedUpdate();
 
-        CharacterBehaviourManager.instance.rigidbody2D.velocity += direction;
+        CharacterBehaviourManager.instance.rigidbody2D.velocity -= direction;
+
 
     }
 
-    public override void CustomUpdate()
+    public override void DisabledFixedUpdate()
     {
+        base.DisabledUpdate();
+        Debug.Log("Disabled!!!");
+        CharacterBehaviourManager.instance.rigidbody2D.velocity += direction;
+
     }
 
 }

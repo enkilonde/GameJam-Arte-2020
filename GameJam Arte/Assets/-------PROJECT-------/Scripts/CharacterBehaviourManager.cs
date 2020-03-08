@@ -72,7 +72,8 @@ public class CharacterBehaviourManager : MonoBehaviour
             allCharaBehaviour[i].DisabledUpdate();
         }
 
-        if (HasAction(Actions.GoLeft) || HasAction(Actions.GoRight))
+        float horiz = Input.GetAxis("Horizontal");
+        if ((HasAction(Actions.GoLeft) && horiz <=0) || (HasAction(Actions.GoRight) && horiz >= 0))
             walkAudio.volume = Mathf.Abs(Input.GetAxis("Horizontal"));
         else
             walkAudio.volume = 0;

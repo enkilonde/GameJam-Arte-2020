@@ -99,7 +99,7 @@ LightmapSettings:
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 112000000, guid: 312281615564b457b9d407590c047d79,
     type: 2}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -3693,6 +3693,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 295144448985802951, guid: 227e8b1b9a8e5d045b2881a060c6ce7e,
+        type: 3}
+      propertyPath: slotsAtStart
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6375586380265091175, guid: 227e8b1b9a8e5d045b2881a060c6ce7e,
         type: 3}
       propertyPath: m_SortingOrder
@@ -7122,6 +7127,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 690003071440817380, guid: f4c5da21913e35e41b651bb82d39a55a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1045382958984416676, guid: f4c5da21913e35e41b651bb82d39a55a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1045382959389447242, guid: f4c5da21913e35e41b651bb82d39a55a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2953843614453910710, guid: f4c5da21913e35e41b651bb82d39a55a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7232,6 +7252,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasMemory
       objectReference: {fileID: 0}
+    - target: {fileID: 3078887795970078863, guid: f4c5da21913e35e41b651bb82d39a55a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5261801459314374623, guid: f4c5da21913e35e41b651bb82d39a55a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5476408224224371179, guid: f4c5da21913e35e41b651bb82d39a55a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7754374332118573371, guid: f4c5da21913e35e41b651bb82d39a55a,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -7245,6 +7280,11 @@ PrefabInstance:
     - target: {fileID: 7754374332118573371, guid: f4c5da21913e35e41b651bb82d39a55a,
         type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8394539408511270595, guid: f4c5da21913e35e41b651bb82d39a55a,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8431619591873753162, guid: f4c5da21913e35e41b651bb82d39a55a,

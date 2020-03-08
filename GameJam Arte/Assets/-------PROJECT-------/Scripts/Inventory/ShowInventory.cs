@@ -26,4 +26,19 @@ public class ShowInventory : MonoBehaviour
             canvasGroup.interactable = !canvasGroup.interactable;
         }
     }
+    
+    public void Open()
+    {
+        canvasGroup.alpha = 1;
+        canvasGroup.blocksRaycasts = true;
+        canvasGroup.interactable = true;
+    }
+
+    public void Close()
+    {
+        canvasGroup.alpha = 0;
+        canvasGroup.blocksRaycasts = false;
+        canvasGroup.interactable = false;
+    }
+
 }

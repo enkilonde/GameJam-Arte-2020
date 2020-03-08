@@ -32,6 +32,7 @@ public class Regarder : CharacterBehaviour
     {
         volume = Camera.main.GetComponent<Volume>();
         targetVignette = value;
+        volume.weight = value;
     }
 
     private void Update()

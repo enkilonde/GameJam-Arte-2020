@@ -127,6 +127,7 @@ public class BarSquare : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         OnRemove();
 
         GameObject draggedObj = Instantiate(objectToAdd.gameObject, transform.position, transform.rotation, transform.parent);
+        draggedObj.GetComponent<RectTransform>().sizeDelta = new Vector2(100, 100);
         contained = draggedObj.GetComponent<DragableObject>();
         contained.dragged = false;
 

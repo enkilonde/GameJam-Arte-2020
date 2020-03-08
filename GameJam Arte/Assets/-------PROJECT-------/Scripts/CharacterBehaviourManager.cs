@@ -45,9 +45,20 @@ public class CharacterBehaviourManager : MonoBehaviour
 
     public AudioSource walkAudio;
 
+    [Range(0, 7)]
+    public int slotsAtStart = 7;
+
     private void Awake()
     {
         allCharaBehaviour = GetComponentsInChildren<CharacterBehaviour>();
+    }
+
+    private void Start()
+    {
+        for (int i = slotsAtStart; i < 7; i++)
+        {
+            MemoryBarManager.instance.EraseRight();
+        }
     }
 
     void Update()

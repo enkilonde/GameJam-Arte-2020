@@ -13,6 +13,8 @@ public class DragableObject : MonoBehaviour, IBeginDragHandler
     public Actions action;
     //public CharacterBehaviour characterBehaviour;
 
+    CanvasScaler scaler;
+
     public void OnBeginDrag(PointerEventData eventData)
     {
         if (Input.GetMouseButton(2))
@@ -41,6 +43,7 @@ public class DragableObject : MonoBehaviour, IBeginDragHandler
     void Start()
     {
         rectTransform = GetComponent<RectTransform>();
+        scaler = GetComponentInParent<CanvasScaler>();
     }
 
     // Update is called once per frame
@@ -48,7 +51,16 @@ public class DragableObject : MonoBehaviour, IBeginDragHandler
     {
         if(dragged)
         {
-            rectTransform.anchoredPosition = Input.mousePosition;
+
+            float refWidth = scaler.referenceResolution.x;
+            float refHeight = scaler.referenceResolution.y;
+            float ratioX = refWidth / Screen.width;
+            float ratioY = refHeight / Screen.height;
+            Debug.Log(ratioX + " , " + ratioY);
+
+            Vector2 pos = new Vector2(Input.mousePosition.x * ratioX, Input.mousePosition.y * ratioY);
+
+            rectTransform.anchoredPosition = pos;
 
             if (Input.GetMouseButtonUp(0))
             {

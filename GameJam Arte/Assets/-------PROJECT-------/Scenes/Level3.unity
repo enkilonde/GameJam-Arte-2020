@@ -4540,7 +4540,7 @@ PrefabInstance:
     - target: {fileID: 295144448985802951, guid: 227e8b1b9a8e5d045b2881a060c6ce7e,
         type: 3}
       propertyPath: slotsAtStart
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 295144449440074285, guid: 227e8b1b9a8e5d045b2881a060c6ce7e,
         type: 3}
@@ -7141,12 +7141,12 @@ PrefabInstance:
     - target: {fileID: 3153858375528903868, guid: f4c5da21913e35e41b651bb82d39a55a,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: -1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3844651853226477103, guid: f4c5da21913e35e41b651bb82d39a55a,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 3844651853226477103, guid: f4c5da21913e35e41b651bb82d39a55a,
         type: 3}
@@ -7156,12 +7156,12 @@ PrefabInstance:
     - target: {fileID: 3844651853355226678, guid: f4c5da21913e35e41b651bb82d39a55a,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: -1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3844651853355226678, guid: f4c5da21913e35e41b651bb82d39a55a,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: -1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3844651853435880291, guid: f4c5da21913e35e41b651bb82d39a55a,
         type: 3}
@@ -7181,22 +7181,22 @@ PrefabInstance:
     - target: {fileID: 3844651853959600993, guid: f4c5da21913e35e41b651bb82d39a55a,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3844651854115517937, guid: f4c5da21913e35e41b651bb82d39a55a,
-        type: 3}
-      propertyPath: m_LocalScale.x
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3844651854115517937, guid: f4c5da21913e35e41b651bb82d39a55a,
         type: 3}
-      propertyPath: m_LocalScale.y
+      propertyPath: m_LocalScale.x
       value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3844651854115517937, guid: f4c5da21913e35e41b651bb82d39a55a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3844651854604805581, guid: f4c5da21913e35e41b651bb82d39a55a,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 3844651854604805581, guid: f4c5da21913e35e41b651bb82d39a55a,
         type: 3}

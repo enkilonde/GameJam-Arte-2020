@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-[RequireComponent(typeof(Collider))]
+[RequireComponent(typeof(Collider2D))]
 public class Trigger2D : BaseTrigger
 {
     [Header("Settings")]
@@ -15,7 +15,7 @@ public class Trigger2D : BaseTrigger
 
     private void Reset()
     {
-        Collider collider = GetComponent<Collider>();
+        Collider2D collider = GetComponent<Collider2D>();
         collider.isTrigger = true;
 
         collideTags = new string[1] { "GameController" };
@@ -93,14 +93,14 @@ public class Trigger2D : BaseTrigger
         DrawCube(0.3f);
     }
 
-    BoxCollider gizmoBoxCollider;
-    SphereCollider gizmoSphereCollider;
+    BoxCollider2D gizmoBoxCollider;
+    CircleCollider2D gizmoSphereCollider;
     private void DrawCube(float alpha)
     {
         if (gizmoBoxCollider == null && gizmoSphereCollider == null)
         {
-            gizmoBoxCollider = GetComponent<BoxCollider>();
-            gizmoSphereCollider = GetComponent<SphereCollider>();
+            gizmoBoxCollider = GetComponent<BoxCollider2D>();
+            gizmoSphereCollider = GetComponent<CircleCollider2D>();
         }
 
         Matrix4x4 matrixCopy = Gizmos.matrix;
@@ -114,7 +114,7 @@ public class Trigger2D : BaseTrigger
 
         if (gizmoBoxCollider != null)
         {
-            colliderScale = new Vector3(transform.lossyScale.x * gizmoBoxCollider.size.x, transform.lossyScale.y * gizmoBoxCollider.size.y, transform.lossyScale.z * gizmoBoxCollider.size.z);
+            colliderScale = new Vector2(transform.lossyScale.x * gizmoBoxCollider.size.x, transform.lossyScale.y * gizmoBoxCollider.size.y);
             Gizmos.matrix = Matrix4x4.TRS(transform.position, transform.rotation, colliderScale);
             Gizmos.DrawCube(Vector3.zero, Vector3.one);
 

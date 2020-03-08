@@ -111,6 +111,5 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   orientationTrigger: 0
-  collideTags:
-  - GameController
+  collideTags: []
   gizmoColor: {r: 1, g: 0, b: 0, a: 1}

@@ -20,7 +20,6 @@ public class Gravity : CharacterBehaviour
     public override void DisabledFixedUpdate()
     {
         base.DisabledUpdate();
-        Debug.Log("Disabled!!!");
         CharacterBehaviourManager.instance.rigidbody2D.velocity += direction;
 
     }

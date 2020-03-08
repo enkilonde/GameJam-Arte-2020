@@ -4,25 +4,22 @@ using UnityEngine;
 
 public class ErazingArea : MonoBehaviour
 {
-    
-    
 
-    // Start is called before the first frame update
-    void Start()
+
+    public void Stop()
     {
-        
+        GetComponentInChildren<Animator>().SetTrigger("stop");
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Restart()
     {
-        
+        GetComponentInChildren<Animator>().SetTrigger("restart");
+
     }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Erase");
-
         if (collision.gameObject.tag != "Player")
             return;
         MemoryBarManager.instance.EraseRight();

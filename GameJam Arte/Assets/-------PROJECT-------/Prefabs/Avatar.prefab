@@ -72,8 +72,7 @@ MonoBehaviour:
   footCollider: {fileID: 295144449620745689}
   allCharaBehaviour: []
   enabledCharaBehaviour: []
-  animator: {fileID: 1798508911638052756, guid: 227e8b1b9a8e5d045b2881a060c6ce7e,
-    type: 3}
+  animator: {fileID: 980592572}
 --- !u!1 &295144448998726866
 GameObject:
   m_ObjectHideFlags: 0

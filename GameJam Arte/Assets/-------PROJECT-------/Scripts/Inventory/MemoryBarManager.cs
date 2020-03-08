@@ -2,9 +2,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+
+
 
 public class MemoryBarManager : MonoBehaviour
 {
+    public UnityEvent OnAddAction;
+
+
     private static MemoryBarManager _instance;
     public static MemoryBarManager instance
     {

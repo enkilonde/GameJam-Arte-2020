@@ -28,6 +28,7 @@ public class Jump : CharacterBehaviour
     private void StartJump()
     {
         Debug.Log("Jump");
+        audio.Play();
         CharacterBehaviourManager.instance.animator.SetTrigger("jump");
         jumForceDecreasing = jumpForce;
         jumping = true;

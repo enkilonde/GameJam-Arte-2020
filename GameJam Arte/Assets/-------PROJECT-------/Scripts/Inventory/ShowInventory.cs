@@ -1,9 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ShowInventory : MonoBehaviour
 {
+    public UnityEvent OnOpen;
+    public UnityEvent OnClose;
 
     private Canvas canvas;
     public CanvasGroup canvasGroup;

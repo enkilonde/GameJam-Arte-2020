@@ -7,21 +7,30 @@ public class ErazingArea : MonoBehaviour
 {
 
     public UnityEvent OnErase;
+    public Animator animator;
+
+    public UnityEvent OnStop;
+
+    private bool active = true;
     public void Stop()
     {
-        GetComponentInChildren<Animator>().SetTrigger("stop");
+        animator.SetTrigger("stop");
+        active = false;
+        OnStop?.Invoke();
     }
 
     public void Restart()
     {
-        GetComponentInChildren<Animator>().SetTrigger("restart");
-
+        animator.SetTrigger("restart");
+        active = true;
     }
 
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag != "Player")
+            return;
+        if (!active)
             return;
         MemoryBarManager.instance.EraseRight();
         OnErase?.Invoke();

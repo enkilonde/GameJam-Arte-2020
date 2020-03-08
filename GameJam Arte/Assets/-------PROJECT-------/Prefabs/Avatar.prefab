@@ -293,7 +293,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   action: 0
-  speed: 10
+  speed: 5
 --- !u!1 &295144449453514917
 GameObject:
   m_ObjectHideFlags: 0
@@ -338,7 +338,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   action: 1
-  speed: 10
+  speed: 5
 --- !u!1 &295144449620745686
 GameObject:
   m_ObjectHideFlags: 0
@@ -544,8 +544,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   action: 2
   jumping: 0
-  jumpForce: 15
-  jumpForceDecrease: 10
+  jumpForce: 16
+  jumpForceDecrease: 16
 --- !u!1 &859691971572267783
 GameObject:
   m_ObjectHideFlags: 0

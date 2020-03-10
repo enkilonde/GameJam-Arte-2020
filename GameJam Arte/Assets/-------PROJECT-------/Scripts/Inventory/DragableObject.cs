@@ -56,7 +56,6 @@ public class DragableObject : MonoBehaviour, IBeginDragHandler
             float refHeight = scaler.referenceResolution.y;
             float ratioX = refWidth / Screen.width;
             float ratioY = refHeight / Screen.height;
-            Debug.Log(ratioX + " , " + ratioY);
 
             Vector2 pos = new Vector2(Input.mousePosition.x * ratioX, Input.mousePosition.y * ratioY);
 

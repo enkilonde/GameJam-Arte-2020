@@ -21,14 +21,22 @@ public class ShowInventory : MonoBehaviour
     {
         if (Input.GetKeyUp(KeyCode.I))
         {
-            canvasGroup.alpha = 1 - canvasGroup.alpha;
-            canvasGroup.blocksRaycasts = !canvasGroup.blocksRaycasts;
-            canvasGroup.interactable = !canvasGroup.interactable;
+            Toggle();
         }
     }
     
+    public void Toggle()
+    {
+        canvasGroup.alpha = 1 - canvasGroup.alpha;
+        canvasGroup.blocksRaycasts = !canvasGroup.blocksRaycasts;
+        canvasGroup.interactable = !canvasGroup.interactable;
+
+    }
+
+
     public void Open()
     {
+
         canvasGroup.alpha = 1;
         canvasGroup.blocksRaycasts = true;
         canvasGroup.interactable = true;

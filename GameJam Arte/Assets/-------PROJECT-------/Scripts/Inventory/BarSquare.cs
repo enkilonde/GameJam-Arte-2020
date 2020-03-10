@@ -79,7 +79,8 @@ public class BarSquare : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
 
     void OnDestroy()
     {
-        MemoryBarManager.instance.OnDrop -= OnDrop;
+        if(MemoryBarManager.instance != null)
+            MemoryBarManager.instance.OnDrop -= OnDrop;
     }
 
     // Update is called once per frame
